@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+body {
+  background: #333;
+  color: hsl(200, 100%, 90%);
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.content {
+  background-color: grey;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 0.5em;
+}
+
+.new-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.filter-label {
+  background-color: grey;
+  border: 2px solid white;
+  border-radius: 0.25em;
+}
+
+.todo {
+  justify-content: center;
+  display: flex;
+  border: 2px solid rgba(0, 110, 235, 1);
+}
+.btn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: hsl(200, 100%, 50%, 0.2);
+}
+
+.btn.btn-edit {
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  border: none;
+
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 51, 102, 1) 0%,
+    rgba(0, 51, 102, 0.5) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+  transform: translate(0, 15%);
+}
+
+.btn.btn-danger {
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  border: none;
+
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 0.7) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+  transform: translate(0, 15%);
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:focus-visible {
+  background: hsl(0, 100%, 40%, 0.2);
+}
+
+.new-item-form input {
+  outline: none;
+  border: 1px solid hsl(200, 100%, 40%);
+  background: hsl(200, 100%, 30%);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  color: hsl(200, 100%, 90%);
+}
+
+.new-item-form input:focus {
+  border: 1px solid hsl(200, 100%, 70%);
+}
+
+.header {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.list li:has(input:checked) label {
+  color: hsl(200, 20%, 40%);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.list li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.list li label {
+  display: flex;
+  gap: 0.25rem;
+  cursor: pointer;
+  align-items: center;
+}
+
+.list li:has(input:focus-visible) label {
+  outline: 1px solid hsl(200, 100%, 50%);
+}
+
+.list li input {
+  outline: none;
+  width: 0;
+  height: 0;
+  appearance: none;
+  pointer-events: none;
+  position: absolute;
+}
+
+.list li label::before {
+  content: "";
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: hsl(200, 100%, 90%);
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list li label:hover::before {
+  background: hsl(200, 100%, 80%);
+}
+
+.list li:has(input:checked) label::before {
+  content: "✔";
+  background: hsl(200, 100%, 40%);
+  color: hsl(200, 100%, 90%);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.list li:has(input:checked) label:hover::before {
+  background: hsl(200, 100%, 30%);
+}
